@@ -88,7 +88,7 @@ This shows the votes details in hand in hand
 
 **Application Workflow:**
 
-![Workflow](docs/workflow.png)
+![WhatsApp Image 2026-02-21 at 11 31 22 AM](https://github.com/user-attachments/assets/5a10b977-e436-401e-8dc6-46a2ab89aa34)
 This is the base workflow of the topic
 
 ---
