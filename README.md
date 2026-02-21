@@ -38,13 +38,6 @@ The solution is to implement a **Transparent Voting System** that uses secure di
 - Libraries used: Chat GPT
 - Tools used:  VS Code
 
-**For Hardware:**
-- Main components: [List main components]
-- Specifications: [Technical specifications]
-- Tools required: [List tools needed]
-
----
-
 ## Features
 
 List the key features of your project:
@@ -69,14 +62,6 @@ List the key features of your project:
 [Run commands - e.g., npm start, python app.py]
 ```
 
-### For Hardware:
-
-#### Components Required
-[List all components needed with specifications]
-
-#### Circuit Setup
-[Explain how to set up the circuit]
-
 ---
 
 ## Project Documentation
@@ -85,14 +70,14 @@ List the key features of your project:
 
 #### Screenshots (Add at least 3)
 
-![Screenshot1]<img width="1911" height="1065" alt="Image" src="https://github.com/user-attachments/assets/db7c4c8c-362d-4b64-b55d-27bf155ecd28" />
-*Add caption explaining what this shows*
+<img width="1911" height="1065" alt="Image" src="https://github.com/user-attachments/assets/db7c4c8c-362d-4b64-b55d-27bf155ecd28" />
+This is the front end of the website where we can see the team name and registration button
 
-![Screenshot2]<img width="1908" height="999" alt="Image" src="https://github.com/user-attachments/assets/68a6cd7c-e7a3-4919-8909-1bec2eb3c44c" />
-*Add caption explaining what this shows*
+<img width="1908" height="999" alt="Image" src="https://github.com/user-attachments/assets/68a6cd7c-e7a3-4919-8909-1bec2eb3c44c" />
+This shows the confirmation for the voters to ensure their votes
 
-![Screenshot3]<img width="595" height="636" alt="Image" src="https://github.com/user-attachments/assets/671f5810-c373-4ab0-8382-08509a6efafa" />
-*Add caption explaining what this shows*
+<img width="595" height="636" alt="Image" src="https://github.com/user-attachments/assets/671f5810-c373-4ab0-8382-08509a6efafa" />
+This shows the votes details in hand in hand 
 
 #### Diagrams
 
@@ -104,7 +89,7 @@ List the key features of your project:
 **Application Workflow:**
 
 ![Workflow](docs/workflow.png)
-*Add caption explaining your workflow*
+This is the base workflow of the topic
 
 ---
 
