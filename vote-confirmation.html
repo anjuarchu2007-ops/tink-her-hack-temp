@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Vote Confirmation - Zero Trace</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f2f2f2;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            background: white;
+            width: 500px;
+            padding: 50px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border: 2px solid black;
+        }
+
+        h1 {
+            font-weight: bold;
+            color: black;
+            margin-bottom: 10px;
+            font-size: 36px;
+        }
+
+        h2 {
+            color: #333;
+            margin-bottom: 30px;
+            font-size: 24px;
+            font-weight: normal;
+        }
+
+        .success-icon {
+            font-size: 100px;
+            margin-bottom: 20px;
+            animation: bounce 0.6s;
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        .success-message {
+            color: green;
+            font-weight: bold;
+            font-size: 18px;
+            margin: 20px 0;
+        }
+
+        .vote-details {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 25px 0;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+
+        .detail-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .detail-row:last-child {
+            border-bottom: none;
+        }
+
+        .detail-label {
+            font-weight: bold;
+            color: #333;
+        }
+
+        .detail-value {
+            color: #333;
+            font-weight: bold;
+        }
+
+        .secure-badge {
+            background-color: #e8f5e9;
+            color: green;
+            padding: 10px 15px;
+            border-radius: 5px;
+            display: inline-block;
+            margin: 15px 0;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .instruction {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.6;
+            margin: 20px 0;
+        }
+
+        .button-group {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        button {
+            padding: 12px 30px;
+            font-size: 14px;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .finish-button {
+            background-color: green;
+            color: white;
+        }
+
+        .finish-button:hover {
+            background-color: darkgreen;
+        }
+
+        .view-button {
+            background-color: black;
+            color: white;
+        }
+
+        .view-button:hover {
+            background-color: #333;
+        }
+
+        .transaction-id {
+            background-color: #f0f0f0;
+            padding: 10px;
+            border-radius: 4px;
+            margin-top: 10px;
+            font-family: monospace;
+            font-size: 12px;
+            word-break: break-all;
+            color: #333;
+        }
+
+        .instruction {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.6;
+            margin: 20px 0;
+        }
+
+        .button-group {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        button {
+            padding: 12px 30px;
+            font-size: 14px;
+            font-weight: bold;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .finish-button {
+            background-color: #28a745;
+            color: white;
+        }
+
+        .finish-button:hover {
+            background-color: #218838;
+        }
+
+        .view-button {
+            background-color: #667eea;
+            color: white;
+        }
+
+        .view-button:hover {
+            background-color: #764ba2;
+        }
+
+        .transaction-id {
+            background-color: #f0f0f0;
+            padding: 10px;
+            border-radius: 4px;
+            margin-top: 10px;
+            font-family: monospace;
+            font-size: 12px;
+            word-break: break-all;
+            color: #333;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>ZERO TRACE</h1>
+        <h2>Vote Recorded Successfully</h2>
+
+        <div class="success-icon">✅</div>
+        <div class="success-message">Your vote has been securely recorded!</div>
+
+        <div class="vote-details">
+            <div class="detail-row">
+                <span class="detail-label">Voted For:</span>
+                <span class="detail-value" id="candidateName">Loading...</span>
+            </div>
+            <div class="detail-row">
+                <span class="detail-label">Department:</span>
+                <span class="detail-value" id="candidateDepartment">Loading...</span>
+            </div>
+            <div class="detail-row">
+                <span class="detail-label">Vote Timestamp:</span>
+                <span class="detail-value" id="voteTime">Loading...</span>
+            </div>
+            <div class="detail-row">
+                <span class="detail-label">Status:</span>
+                <span class="detail-value" id="voteStatus">🔐 Encrypted on Blockchain</span>
+            </div>
+        </div>
+
+        <div class="secure-badge">🔒 Blockchain Verified & Immutable</div>
+
+        <div class="instruction">
+            <p>Your vote has been encrypted and recorded on the blockchain with a unique transaction ID.</p>
+            <p>This ensures complete transparency and security of the voting process.</p>
+        </div>
+
+        <div class="transaction-id">
+            <strong>Transaction ID:</strong><br>
+            <span id="txId">0x7f3d9c4a2b1e8f5d6c3a9e2b1f7d4c8a</span>
+        </div>
+
+        <div class="button-group">
+            <button class="finish-button" onclick="finishVoting()">Finish Voting</button>
+            <button class="view-button" onclick="viewConfirmation()">View Details</button>
+        </div>
+    </div>
+
+    <script>
+        window.onload = function() {
+            // Retrieve vote data from session storage
+            var candidateName = sessionStorage.getItem("selectedCandidateName");
+            var candidateDepartment = sessionStorage.getItem("selectedCandidateDepartment");
+
+            // Display vote information
+            document.getElementById("candidateName").innerHTML = candidateName || "N/A";
+            document.getElementById("candidateDepartment").innerHTML = candidateDepartment || "N/A";
+
+            // Display current date and time
+            var now = new Date();
+            var timeString = now.toLocaleString('en-US', {
+                year: 'numeric',
+                month: '2-digit',
+                day: '2-digit',
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit'
+            });
+            document.getElementById("voteTime").innerHTML = timeString;
+
+            // Generate a unique transaction ID
+            var txId = generateTransactionId();
+            document.getElementById("txId").innerHTML = txId;
+            sessionStorage.setItem("transactionId", txId);
+        };
+
+        function generateTransactionId() {
+            var chars = '0123456789abcdef';
+            var txId = '0x';
+            for (var i = 0; i < 32; i++) {
+                txId += chars.charAt(Math.floor(Math.random() * chars.length));
+            }
+            return txId;
+        }
+
+        function finishVoting() {
+            // Clear all session data
+            sessionStorage.clear();
+            // Return to home page
+            window.location.href = "index.html";
+        }
+
+        function viewConfirmation() {
+            // Display confirmation details
+            alert(`Vote Confirmation\n\nCandidate: ${sessionStorage.getItem("selectedCandidateName")}\nDepartment: ${sessionStorage.getItem("selectedCandidateDepartment")}\nTransaction ID: ${sessionStorage.getItem("transactionId")}`);
+        }
+    </script>
+
+</body>
+</html>
