@@ -155,7 +155,7 @@ List the key features of your project:
 ## Project Demo
 
 ### Video
-https://www.loom.com/share/9b76ff2bd24841e39dcc9d6693108dbb[Add your demo video link here - YouTube, Google Drive, etc.]
+https://www.loom.com/share/9b76ff2bd24841e39dcc9d6693108dbb
 
 *Explain what the video demonstrates - key features, user flow, technical highlights*
 
