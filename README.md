@@ -2,27 +2,29 @@
   <img src="./img.png" alt="Project Banner" width="100%">
 </p>
 
-# [Project Name] 🎯
+# Voting System 🎯
 
 ## Basic Details
 
-### Team Name: [Name]
+### Team Name: ZeroTrace
 
 ### Team Members
-- Member 1: [Name] - [College]
-- Member 2: [Name] - [College]
+- Member 1: Anjana Premsha S S - Lourdes Matha College of science and technology
+- Member 2: Archana Premsha S S - Lourdes Matha College of science and technology
 
 ### Hosted Project Link
-[mention your project hosted link here]
+  [mention your project hosted link here
 
 ### Project Description
-[2-3 lines about what your project does]
+A Transparent Voting System is a secure digital platform designed to ensure fair and trustworthy elections. It uses technology to record, store, and verify votes accurately while maintaining voter privacy. The system improves transparency, reduces fraud, and increases public confidence in the election process.
 
 ### The Problem statement
-[What problem are you solving?]
+The main problem addressed by a Transparent Voting System is the lack of trust in traditional voting methods. Issues like vote tampering, fraud, lack of transparency, and delayed results can reduce public confidence. A transparent system aims to prevent manipulation and ensure that every vote is securely recorded and accurately counted.
+
 
 ### The Solution
-[How are you solving it?]
+The solution is to implement a **Transparent Voting System** that uses secure digital technology to record and verify votes. It ensures accurate counting, prevents fraud, and allows proper monitoring while maintaining voter privacy. This increases trust and fairness in the election process.
+
 
 ---
 
@@ -31,10 +33,10 @@
 ### Technologies/Components Used
 
 **For Software:**
-- Languages used: [e.g., JavaScript, Python, Java]
-- Frameworks used: [e.g., React, Django, Spring Boot]
-- Libraries used: [e.g., axios, pandas, JUnit]
-- Tools used: [e.g., VS Code, Git, Docker]
+- Languages used: HTML, CSS JavaScript
+- Frameworks used: 
+- Libraries used: Chat GPT
+- Tools used:  VS Code
 
 **For Hardware:**
 - Main components: [List main components]
@@ -46,10 +48,10 @@
 ## Features
 
 List the key features of your project:
-- Feature 1: [Description]
-- Feature 2: [Description]
-- Feature 3: [Description]
-- Feature 4: [Description]
+- Feature 1: Voter Authentication System
+- Feature 2: Real-Time Result Updates
+- Feature 3: End-to-End Vote Verification
+- Feature 4: Audit Trail System
 
 ---
 
@@ -83,13 +85,13 @@ List the key features of your project:
 
 #### Screenshots (Add at least 3)
 
-![Screenshot1](Add screenshot 1 here with proper name)
+![Screenshot1]<img width="1908" height="999" alt="Image" src="https://github.com/user-attachments/assets/68a6cd7c-e7a3-4919-8909-1bec2eb3c44c" />
 *Add caption explaining what this shows*
 
-![Screenshot2](Add screenshot 2 here with proper name)
+![Screenshot2]<img width="595" height="636" alt="Image" src="https://github.com/user-attachments/assets/671f5810-c373-4ab0-8382-08509a6efafa" />
 *Add caption explaining what this shows*
 
-![Screenshot3](Add screenshot 3 here with proper name)
+![Screenshot3]<img width="1911" height="1065" alt="Image" src="https://github.com/user-attachments/assets/db7c4c8c-362d-4b64-b55d-27bf155ecd28" />
 *Add caption explaining what this shows*
 
 #### Diagrams
@@ -374,7 +376,7 @@ python script.py -v --format json data.json
 
 If you used AI tools during development, document them here for transparency:
 
-**Tool Used:** [e.g., GitHub Copilot, v0.dev, Cursor, ChatGPT, Claude]
+**Tool Used:** GitHub Copilot, ChatGPT
 
 **Purpose:** [What you used it for]
 - Example: "Generated boilerplate React components"
@@ -386,7 +388,7 @@ If you used AI tools during development, document them here for transparency:
 - "Debug this async function that's causing race conditions"
 - "Optimize this database query for better performance"
 
-**Percentage of AI-generated code:** [Approximately X%]
+**Percentage of AI-generated code:** 100%
 
 **Human Contributions:**
 - Architecture design and planning
@@ -400,9 +402,9 @@ If you used AI tools during development, document them here for transparency:
 
 ## Team Contributions
 
-- [Name 1]: [Specific contributions - e.g., Frontend development, API integration, etc.]
-- [Name 2]: [Specific contributions - e.g., Backend development, Database design, etc.]
-- [Name 3]: [Specific contributions - e.g., UI/UX design, Testing, Documentation, etc.]
+- Anjana: Founder of the idea and developer of the frontend
+- Archana: bakend and formation of database and tesing is also done
+
 
 ---
 
