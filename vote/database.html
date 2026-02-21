@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Zero Trace</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            background-color: #f2f2f2;
+        }
+
+        h1 {
+            font-weight: bold;
+            color: black;
+            margin-top: 40px;
+        }
+
+        .box {
+            background: white;
+            width: 350px;
+            margin: auto;
+            padding: 20px;
+            border: 2px solid black;
+            border-radius: 10px;
+        }
+
+        input {
+            width: 90%;
+            padding: 8px;
+            margin: 10px 0;
+        }
+
+        button {
+            padding: 10px 20px;
+            background: black;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        #result {
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        table {
+            margin: auto;
+            margin-top: 20px;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>ZERO TRACE</h1>
+<h2>Transparent Voting System with Blockchain</h2>
+
+<div class="box">
+    <h3>Voter Registration</h3>
+
+    <input type="text" id="voterId" placeholder="Numeric Voter ID">
+    <input type="number" id="age" placeholder="Age">
+
+    <br>
+    <button onclick="register()">Register</button>
+
+    <div id="result"></div>
+</div>
+
+<h3>Registered Voters (Fake Database)</h3>
+
+<table>
+    <thead>
+        <tr>
+            <th>Voter ID</th>
+            <th>Age</th>
+        </tr>
+    </thead>
+    <tbody id="tableData"></tbody>
+</table>
+
+<br>
+<button onclick="downloadCSV()">Download CSV</button>
+
+<script>
+function register() {
+
+    var voterId = document.getElementById("voterId").value;
+    var age = document.getElementById("age").value;
+    var result = document.getElementById("result");
+
+    var numbersOnly = /^[0-9]+$/;
+
+    if (voterId === "" || age === "") {
+        result.style.color = "red";
+        result.innerHTML = "Invalid Registration";
+        return;
+    }
+
+    if (!numbersOnly.test(voterId)) {
+        result.style.color = "red";
+        result.innerHTML = "Invalid Registration";
+        return;
+    }
+
+    if (age < 18) {
+        result.style.color = "red";
+        result.innerHTML = "Invalid Registration";
+        return;
+    }
+
+    result.style.color = "green";
+    result.innerHTML = "Registration Successful";
+
+    var table = document.getElementById("tableData");
+    var row = table.insertRow();
+
+    row.insertCell(0).innerHTML = voterId;
+    row.insertCell(1).innerHTML = age;
+
+    document.getElementById("voterId").value = "";
+    document.getElementById("age").value = "";
+}
+
+
+function downloadCSV() {
+
+    var rows = document.querySelectorAll("table tr");
+    var csv = [];
+
+    for (var i = 0; i < rows.length; i++) {
+        var cols = rows[i].querySelectorAll("td, th");
+        var row = [];
+        for (var j = 0; j < cols.length; j++) {
+            row.push(cols[j].innerText);
+        }
+        csv.push(row.join(","));
+    }
+
+    var csvString = csv.join("\n");
+
+    var blob = new Blob([csvString], { type: "text/csv" });
+    var url = window.URL.createObjectURL(blob);
+
+    var a = document.createElement("a");
+    a.setAttribute("hidden", "");
+    a.setAttribute("href", url);
+    a.setAttribute("download", "registered_voters.csv");
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+}
+</script>
+
+</body>
+</html>

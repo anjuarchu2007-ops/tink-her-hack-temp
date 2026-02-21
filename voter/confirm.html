@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Confirm Vote</title>
+    <style>
+        body { font-family: Arial; text-align: center; }
+        button { padding: 8px 15px; background: black; color: white; border: none; margin: 5px; }
+    </style>
+</head>
+<body>
+
+<h2>Confirm Your Vote</h2>
+
+<p id="details"></p>
+
+<button onclick="submitVote()">Confirm Vote</button>
+<button onclick="downloadCSV()">Download All Votes (Admin)</button>
+
+<p id="message"></p>
+
+<script>
+let voterId = localStorage.getItem("voterId");
+let age = localStorage.getItem("age");
+let candidate = localStorage.getItem("candidate");
+
+document.getElementById("details").innerHTML =
+"Voter ID: " + voterId + "<br>Age: " + age + "<br>Candidate: " + candidate;
+
+function submitVote() {
+
+    let votes = JSON.parse(localStorage.getItem("votes")) || [];
+
+    // Prevent duplicate voting
+    let alreadyVoted = votes.some(vote => vote.voterId === voterId);
+
+    if (alreadyVoted) {
+        document.getElementById("message").innerHTML = "You have already voted!";
+        document.getElementById("message").style.color = "red";
+        return;
+    }
+
+    votes.push({
+        voterId: voterId,
+        age: age,
+        candidate: candidate
+    });
+
+    localStorage.setItem("votes", JSON.stringify(votes));
+
+    document.getElementById("message").innerHTML = "Vote Submitted Successfully!";
+    document.getElementById("message").style.color = "green";
+}
+
+function downloadCSV() {
+
+    let votes = JSON.parse(localStorage.getItem("votes")) || [];
+
+    if (votes.length === 0) {
+        alert("No votes available.");
+        return;
+    }
+
+    let csv = "Voter ID,Age,Candidate\n";
+
+    votes.forEach(function(vote) {
+        csv += vote.voterId + "," + vote.age + "," + vote.candidate + "\n";
+    });
+
+    let blob = new Blob([csv], { type: "text/csv" });
+
+    let link = document.createElement("a");
+    link.href = URL.createObjectURL(blob);
+    link.download = "all_votes.csv";
+    link.click();
+}
+</script>
+
+</body>
+</html>

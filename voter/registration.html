@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration</title>
+    <style>
+        body { font-family: Arial; text-align: center; }
+        input { margin: 8px; padding: 6px; }
+        button { padding: 8px 15px; background: black; color: white; border: none; }
+    </style>
+</head>
+<body>
+
+<h2>Voter Registration</h2>
+
+<input type="text" id="voterId" placeholder="Numeric Voter ID"><br>
+<input type="number" id="age" placeholder="Age"><br>
+
+<button onclick="validate()">Proceed</button>
+
+<p id="message"></p>
+
+<script>
+function validate() {
+
+    let voterId = document.getElementById("voterId").value;
+    let age = document.getElementById("age").value;
+    let numbersOnly = /^[0-9]+$/;
+
+    if (!numbersOnly.test(voterId) || age < 18) {
+        document.getElementById("message").innerHTML = "Invalid Registration";
+        document.getElementById("message").style.color = "red";
+        return;
+    }
+
+    localStorage.setItem("voterId", voterId);
+    localStorage.setItem("age", age);
+
+    window.location.href = "vote.html";
+}
+</script>
+
+</body>
+</html>
